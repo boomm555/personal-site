@@ -10,7 +10,7 @@ Reason: 希望反馈明显，但不打断阅读
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="一个正在成长的个人网站实验。" />
+  <meta name="description" content="BYB 的个人网站实验：信息安全学生，在网页、Hip-Hop、建筑与系统之间慢慢长出自己的页面。" />
   <title>BYB — Work in Progress</title>
 
   <style>
@@ -57,6 +57,7 @@ Reason: 希望反馈明显，但不打断阅读
       border-bottom: 1px solid var(--ink);
       font-size: 12px;
       letter-spacing: .08em;
+      gap: 16px;
     }
 
     .mark {
@@ -82,6 +83,12 @@ Reason: 希望反馈明显，但不打断阅读
 
     header nav a:hover {
       color: var(--accent);
+    }
+
+    header nav a:focus-visible,
+    .scroll:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
     }
 
     main {
@@ -166,7 +173,7 @@ Reason: 希望反馈明显，但不打断阅读
       transform: translateY(-4px);
     }
 
-    /* ========== 04 / 关于我 ========== */
+    /* ========== 04 / 关于我 / Currently Building ========== */
     .section {
       padding: 40px 0 80px;
       border-top: 1px solid var(--ink);
@@ -200,6 +207,10 @@ Reason: 希望反馈明显，但不打断阅读
       color: #484842;
     }
 
+    .note p + p {
+      margin-top: 1.1em;
+    }
+
     .topics {
       display: flex;
       flex-wrap: wrap;
@@ -223,15 +234,20 @@ Reason: 希望反馈明显，但不打断阅读
       border-color: var(--ink);
     }
 
-    /* ========== 05 / Day 02 兴趣卡片 ========== */
+    /* ========== 05 / Explorations 卡片 ========== */
     .interests {
       padding: 50px 0 90px;
       border-top: 1px solid var(--ink);
     }
 
+    .interests-kicker {
+      margin: 0 0 18px;
+    }
+
     .interests h2 {
       font-size: clamp(28px, 4vw, 52px);
       font-weight: 500;
+      margin: 0 0 28px;
     }
 
     /* 重点：这里与 HTML 的 class 完全一致 */
@@ -246,17 +262,18 @@ Reason: 希望反馈明显，但不打断阅读
       padding: 24px;
       min-height: 210px;
       transition:
-    transform 400ms ease,
-    border-color 400ms ease,
-    background-color 400ms ease;
-}
-@media (hover: hover) {
-  .interest-card:hover {
-    transform: translateY(-6px);
-    border-color: var(--accent);
-    background-color: #f4f1e7;
-  }
-}
+        transform 400ms ease,
+        border-color 400ms ease,
+        background-color 400ms ease;
+    }
+
+    @media (hover: hover) {
+      .interest-card:hover {
+        transform: translateY(-6px);
+        border-color: var(--accent);
+        background-color: #f4f1e7;
+      }
+    }
 
     .interest-card span {
       font-size: 12px;
@@ -267,16 +284,18 @@ Reason: 希望反馈明显，但不打断阅读
       margin: 35px 0 18px;
       transition: color 220ms ease;
     }
-@media (hover: hover) {
-  .interest-card:hover h3 {
-    color: var(--accent);
-  }
-}
+
+    @media (hover: hover) {
+      .interest-card:hover h3 {
+        color: var(--accent);
+      }
+    }
 
     .interest-card p {
       font-size: 14px;
       line-height: 1.6;
     }
+
     #music-toggle {
       margin-top: 18px;
       padding: 10px 14px;
@@ -286,14 +305,17 @@ Reason: 希望反馈明显，但不打断阅读
       font: 12px "Courier New", monospace;
       cursor: pointer;
     }
+
     #music-toggle:hover {
       background: var(--ink);
       color: var(--paper);
     }
+
     #music-toggle:focus-visible {
       outline: 2px solid var(--accent);
       outline-offset: 3px;
     }
+
     #music-note {
       margin-top: 18px;
       color: var(--accent);
@@ -311,25 +333,39 @@ Reason: 希望反馈明显，但不打断阅读
     }
 
     /* ========== 07 / 移动端适配 ========== */
+    @media (max-width: 900px) {
+      .interest-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     @media (max-width: 700px) {
       .frame {
         width: min(calc(100% - 36px), 1240px);
       }
 
       header {
+        flex-wrap: wrap;
         padding: 22px 0;
+        row-gap: 12px;
+      }
+
+      .label {
+        display: none;
       }
 
       header nav {
         gap: 16px;
+        width: 100%;
+        justify-content: flex-start;
       }
 
       .hero {
-        padding: 96px 0 76px;
+        padding: 64px 0 64px;
       }
 
       h1 {
-        font-size: clamp(64px, 17vw, 120px);
+        font-size: clamp(52px, 18vw, 96px);
         overflow-wrap: anywhere;
       }
 
@@ -344,12 +380,22 @@ Reason: 希望反馈明显，但不打断阅读
 
       .section {
         grid-template-columns: 1fr;
-        gap: 36px;
+        gap: 16px;
+        padding: 36px 0 64px;
       }
 
-      /* 窄屏下，三张卡片改为单列 */
-      .interest-grid {
-        grid-template-columns: 1fr;
+      .interests {
+        padding: 36px 0 72px;
+      }
+
+      .interest-card h3 {
+        font-size: 26px;
+        margin: 22px 0 14px;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 8px;
       }
     }
 
@@ -361,55 +407,59 @@ Reason: 希望反馈明显，但不打断阅读
       *,
       *::before,
       *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
         transition-duration: .01ms !important;
-        .hero.is-entering h1,
-        .hero.is-entering .intro,
-        .hero.is-entering .tiny {
-         animation: none !important;
-}
       }
-      .interest-card:hover {
-  transform: none;
-}
+
+      .hero.is-entering h1,
+      .hero.is-entering .intro,
+      .hero.is-entering .tiny {
+        animation: none !important;
+      }
+
+      .interest-card:hover,
+      .scroll:hover {
+        transform: none;
+      }
     }
+
     #scroll-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      z-index: 9999;
+      pointer-events: none;
+    }
 
-  width: 100%;
-  height: 4px;
+    @keyframes riseIn {
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
 
-  background: var(--accent);
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-  transform: scaleX(0);
-  transform-origin: left;
+    .hero.is-entering h1 {
+      animation: riseIn 650ms ease-out both;
+    }
 
-  z-index: 9999;
-  pointer-events: none;
-}
-@keyframes riseIn {
-  from {
-    opacity: 0;
-    transform: translateY(22px);
-  }
+    .hero.is-entering .intro {
+      animation: riseIn 650ms ease-out 160ms both;
+    }
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.hero.is-entering h1 {
-  animation: riseIn 650ms ease-out both;
-}
-
-.hero.is-entering .intro {
-  animation: riseIn 650ms ease-out 160ms both;
-}
-
-.hero.is-entering .tiny {
-  animation: riseIn 650ms ease-out 320ms both;
-}
+    .hero.is-entering .tiny {
+      animation: riseIn 650ms ease-out 320ms both;
+    }
   </style>
 </head>
 
@@ -426,117 +476,148 @@ Reason: 希望反馈明显，但不打断阅读
       <span class="label">PERSONAL EXPERIMENT / 001</span>
 
       <nav aria-label="主要导航">
+        <a href="#building">NOW</a>
+        <a href="#explorations">NOTES</a>
         <a href="#about">ABOUT</a>
-        <a href="#interests">NOW</a>
       </nav>
     </header>
 
     <main id="top">
 
-      <!-- 第一部分：首页封面 -->
-      <section class="hero" aria-label="个人介绍">
+      <!-- Hero -->
+      <section class="hero" aria-labelledby="hero-title">
 
         <div class="eyebrow">
           WORK IN PROGRESS — 2026
         </div>
 
-        <h1>
-          BYB aka CAFF<span class="period">.</span>
+        <h1 id="hero-title">
+          BYB<span class="period">.</span>
         </h1>
 
         <div class="hero-bottom">
           <div>
-            <div class="intro">
+            <p class="intro">
               <strong>
                 Not finished. Just getting started.
               </strong>
               <br />
-              在学习、创造与探索中，慢慢成为自己。
-            </div>
+              喜欢网页、Hip-Hop、时尚和编程，也喜欢把世界拆开看它怎么转。
+            </p>
 
             <p class="tiny">
-              DESIGN / CODE / MUSIC / CURIOSITY
+              WEB / HIP-HOP / ARCHITECTURE / SYSTEMS
               <br />
               THIS SITE WILL CHANGE AS I DO.
             </p>
           </div>
 
-          <a href="#about" class="scroll">
+          <a href="#building" class="scroll">
             EXPLORE ↓
           </a>
         </div>
 
       </section>
 
-      <!-- 第二部分：关于我 -->
-      <section id="about" class="section">
+      <!-- Currently Building -->
+      <section id="building" class="section" aria-labelledby="building-title">
 
         <div class="section-name">
-          (01) / RIGHT NOW
+          (01) / CURRENTLY BUILDING
         </div>
 
         <div class="note">
-          <h2>
-            我还不知道这个网站<br />
-            最终会变成什么样。
+          <h2 id="building-title">
+            正在做的事：<br />
+            这个个人网站。
           </h2>
 
           <p>
-            现在的我正在学习 Web 开发，
-            也在收集世界上让我感到惊艳的作品。
-            这里会慢慢出现我写的代码、
-            我喜欢的音乐、我记录的想法，
-            以及一些失败但有趣的尝试。
+            这不是作品集成品，是我长期迭代的实验页。V0.1 先把首页说清楚：我是谁、我在做什么、我还在看什么。页面仍是单文件 HTML，没有框架，改一版看一版。
+          </p>
+          <p>
+            最近在练的是信息层级和手机端阅读，而不是堆功能。导航、封面、正在进行、探索、关于——先让别人不用猜。
           </p>
 
-          <div class="topics">
-            <span>CODE</span>
-            <span>HIP-HOP</span>
-            <span>DESIGN</span>
-            <span>SPORT</span>
-            <span>EXPLORATION</span>
+          <div class="topics" aria-label="当前项目标签">
+            <span>V0.1 HOME</span>
+            <span>SINGLE FILE</span>
+            <span>NO FRAMEWORK</span>
+            <span>KEEP ITERATING</span>
           </div>
         </div>
 
       </section>
 
-      <!-- 第三部分：Day 02 兴趣卡片 -->
-      <section id="interests" class="interests">
+      <!-- Explorations -->
+      <section id="explorations" class="interests" aria-labelledby="explorations-title">
 
-        <h2>Things I'm exploring.</h2>
+        <p class="section-name interests-kicker">(02) / EXPLORATIONS</p>
+        <h2 id="explorations-title">Things I'm exploring.</h2>
 
         <div class="interest-grid">
 
           <article class="interest-card">
-            <span>01 / BUILD</span>
-            <h3>CODE</h3>
-            <p>从 C++ 到 Web，学习创造。</p>
-          </article>
-
-          <article class="interest-card">
-            <span>02 / SOUND</span>
-            <h3>HIP-HOP</h3>
-            <p>记录让我反复循环的音乐。</p>
+            <span>01 / SOUND</span>
+            <h3> Hip-Hop</h3>
+            <p>在听说唱怎么讲故事、怎么压节奏。也记下会反复循环的专辑，不装成乐评人。</p>
             <button
-            id="music-toggle"
-            type="button"
-            aria-expanded="false"
-            aria-controls="music-note"
+              id="music-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="music-note"
             >
-            SHOW NOTE +
-          </button>
-          <p id="music-note" hidden>
-          CURRENT LISTENING
-          Tyler, The Creator — IGOR
-          </p>
+              SHOW NOTE +
+            </button>
+            <p id="music-note" hidden>
+              CURRENT LISTENING
+              Tyler, The Creator — IGOR
+            </p>
           </article>
 
           <article class="interest-card">
-            <span>03 / VISUAL</span>
-            <h3>DESIGN</h3>
-            <p>收藏让我感到惊艳的设计。</p>
+            <span>02 / SPACE</span>
+            <h3>设计与审美</h3>
+            <p>看页面如何排字，也看建筑如何排空间。两者都在处理动线、留白和人走进去之后的感觉。</p>
           </article>
 
+          <article class="interest-card">
+            <span>03 / SYSTEMS</span>
+            <h3>技术与机制</h3>
+            <p>课内是信息安全，课外会追系统怎么被设计、怎么失效。编程是动手方式，不是成绩单。</p>
+          </article>
+
+        </div>
+
+      </section>
+
+      <!-- About -->
+      <section id="about" class="section" aria-labelledby="about-title">
+
+        <div class="section-name">
+          (03) / ABOUT
+        </div>
+
+        <div class="note">
+          <h2 id="about-title">
+            我还不知道这个网站<br />
+            最终会变成什么样。
+          </h2>
+
+          <p>
+            我是 BYB，也写 CAFF。兴趣并不整齐：网页设计、Hip-Hop、建筑、写代码，以及那些让人忍不住问“这到底是怎么运转的”的问题。
+          </p>
+          <p>
+            这里会慢慢出现练习、笔记和失败的尝试。没有包装好的实习履历，也先不放联系方式——页面比名片更诚实。
+          </p>
+
+          <div class="topics" aria-label="个人兴趣">
+            <span>INFOSEC</span>
+            <span>WEB</span>
+            <span>HIP-HOP</span>
+            <span>ARCHITECTURE</span>
+            <span>CURIOSITY</span>
+          </div>
         </div>
 
       </section>
@@ -545,7 +626,7 @@ Reason: 希望反馈明显，但不打断阅读
 
     <!-- 页脚 -->
     <footer>
-      <span>© 2026 BYB — VERSION 0.0.2</span>
+      <span>© 2026 BYB — VERSION 0.1</span>
       <span>MADE TO EVOLVE ↗</span>
     </footer>
 
