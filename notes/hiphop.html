@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="BYB 的探索笔记 001：从盛宇《成皿宝于》开始，追问中文 Hip-Hop diss 文化中的作品、回应与语境。持续更新，尚有待核实线索。" />
+  <title>从一首 Diss 开始 — BYB Field Notes 001</title>
+  <style>
+    :root {
+      --paper: #e9ebdb;
+      --ink: #1a1b19;
+      --muted: #77776f;
+      --accent: #b54d31;
+      --line: #a8a99c;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
+    .frame { width: min(calc(100% - 64px), 1240px); margin: auto; }
+    .skip-link { position: absolute; top: -70px; left: 12px; background: var(--ink); color: var(--paper); padding: 12px; z-index: 2; }
+    .skip-link:focus { top: 12px; }
+    header {
+      padding: 29px 0;
+      border-bottom: 1px solid var(--ink);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .brand { font-size: 17px; font-weight: 800; letter-spacing: -.07em; text-decoration: none; }
+    .header-right { display: flex; align-items: center; flex-wrap: wrap; gap: 30px; }
+    .mono { font-family: "Courier New", monospace; font-size: 11px; letter-spacing: .09em; }
+    .muted { color: var(--muted); }
+    .back { text-decoration: none; border-bottom: 1px solid var(--ink); padding-bottom: 5px; }
+    .back:hover { color: var(--accent); border-color: var(--accent); }
+    .hero { padding: clamp(65px, 11vw, 140px) 0 clamp(55px, 9vw, 100px); }
+    .kicker { display: flex; align-items: center; gap: 12px; color: var(--accent); }
+    .kicker::before { content: ""; width: 30px; height: 1px; background: currentColor; }
+    h1 {
+      font: 400 clamp(52px, 8.5vw, 132px)/1.07 Georgia, "Times New Roman", "Songti SC", "SimSun", serif;
+      letter-spacing: -.065em;
+      max-width: 1100px;
+      margin: 28px 0 34px;
+      overflow-wrap: anywhere;
+    }
+    h1 em { color: var(--accent); font-style: normal; }
+    .lede {
+      max-width: 660px;
+      font-size: clamp(17px, 2vw, 24px);
+      line-height: 1.75;
+      margin: 0 0 31px;
+    }
+    .metadata { display: flex; flex-wrap: wrap; gap: 10px; }
+    .metadata span { border: 1px solid var(--line); padding: 9px 12px; font: 11px "Courier New", monospace; }
+    .read-grid {
+      display: grid;
+      grid-template-columns: minmax(165px, 1fr) minmax(0, 2.5fr);
+      gap: clamp(24px, 5vw, 84px);
+      border-top: 1px solid var(--ink);
+      padding: 54px 0 88px;
+    }
+    .side-label { font: 12px "Courier New", monospace; letter-spacing: .04em; }
+    .side-label p { color: var(--muted); line-height: 1.8; }
+    .content { max-width: 800px; min-width: 0; }
+    .content > section { padding: 0 0 45px; margin: 0 0 45px; border-bottom: 1px solid var(--line); }
+    .content > section:last-child { border: none; margin-bottom: 0; padding-bottom: 0; }
+    .section-index { font: 12px "Courier New", monospace; letter-spacing: .09em; color: var(--accent); }
+    h2 { font-size: clamp(27px, 3.6vw, 44px); font-weight: 500; letter-spacing: -.055em; line-height: 1.26; margin: 14px 0 18px; }
+    p { line-height: 1.9; }
+    .content p { font-size: 16px; color: #45463f; max-width: 66ch; }
+    .intro-question { font-size: clamp(19px, 2.3vw, 25px) !important; color: var(--ink) !important; }
+    .question-list { padding: 0; margin: 24px 0 0; list-style: none; border-top: 1px solid var(--line); }
+    .question-list li { display: grid; grid-template-columns: 42px minmax(0,1fr); gap: 14px; border-bottom: 1px solid var(--line); padding: 18px 0; line-height: 1.75; }
+    .question-list .number { color: var(--accent); font: 13px "Courier New", monospace; padding-top: 4px; }
+    .research { display: grid; gap: 12px; margin-top: 22px; }
+    .research-item { display: grid; grid-template-columns: 88px 1fr; gap: 12px; border: 1px solid var(--line); padding: 17px 19px; }
+    .status { color: var(--accent); font: 11px "Courier New", monospace; letter-spacing: .03em; }
+    .research-item p { margin: 0; font-size: 14px; line-height: 1.6; }
+    .method { padding: 22px 25px; background: #f3f0e7; border-left: 3px solid var(--accent); }
+    .method p { margin: 0; }
+    .inline-link { text-decoration-thickness: 1px; text-underline-offset: 5px; }
+    .inline-link:hover { color: var(--accent); }
+    footer { border-top: 1px solid var(--ink); padding: 27px 0 50px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 18px; }
+    @media (max-width: 750px) {
+      .frame { width: min(calc(100% - 36px), 1240px); }
+      .hero { padding-top: 70px; }
+      .read-grid { grid-template-columns: 1fr; gap: 32px; padding-top: 34px; }
+      .side-label p { margin-bottom: 0; }
+      .header-right { gap: 13px; }
+    }
+    @media (max-width: 430px) {
+      h1 { font-size: clamp(45px, 13.5vw, 66px); }
+      .research-item { grid-template-columns: 1fr; gap: 8px; }
+      .metadata span { font-size: 10px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳至正文</a>
+  <div class="frame">
+    <header>
+      <a class="brand" href="../index.html" aria-label="BYB 首页">BYB®</a>
+      <div class="header-right">
+        <span class="mono muted">FIELD NOTES / 001</span>
+        <a class="mono back" href="../index.html">← 返回首页</a>
+      </div>
+    </header>
+
+    <main id="main">
+      <article>
+        <div class="hero">
+          <div class="kicker mono">SOUND / CULTURE / OPEN QUESTIONS</div>
+          <h1>从一首 <em>Diss</em> 开始，<br />探索中文说唱的另一面。</h1>
+          <p class="lede">从盛宇《成皿宝》出发，我想弄清楚：一首歌背后的人物、回应与文化语境，怎样拼成一段更完整的故事？</p>
+          <div class="metadata" aria-label="笔记信息">
+            <span>NOTE 001</span>
+            <span>WORK IN PROGRESS</span>
+            <span>持续补充 / 待核实</span>
+          </div>
+        </div>
+
+        <div class="read-grid">
+          <aside class="side-label">
+            (01) / RESEARCH LOG
+            <p>这是一份持续生长的探索笔记，不是已经定稿的说唱史。</p>
+          </aside>
+
+          <div class="content">
+            <section aria-labelledby="start-title">
+              <span class="section-index">01 / 起点</span>
+              <h2 id="start-title">为什么从这首歌开始？</h2>
+              <p class="intro-question">一首 diss 不只是几句尖锐的歌词；我更想知道，听众为什么会在意它、它又回应了什么。</p>
+              <p>《成皿宝》是我进入这个话题的起点。这里先记下问题和研究路径，等找到可靠材料，再补上具体时间、作品之间的关系与不同观点。</p>
+            </section>
+
+            <section aria-labelledby="questions-title">
+              <span class="section-index">02 / QUESTION MAP</span>
+              <h2 id="questions-title">我想追踪的三条线</h2>
+              <ol class="question-list">
+                <li><span class="number">01</span><span><strong>作品：</strong>歌曲到底在回应什么？哪些信息来自作品本身，哪些只是评论区的推断？</span></li>
+                <li><span class="number">02</span><span><strong>时间：</strong>作品、回应与公开发言先后出现的顺序是什么？能否找到原始发布日期？</span></li>
+                <li><span class="number">03</span><span><strong>语境：</strong>地下与主流、个人表达与公众传播，如何影响一场争议被理解的方式？</span></li>
+              </ol>
+            </section>
+
+            <section aria-labelledby="sources-title">
+              <span class="section-index">03 / FACT CHECK</span>
+              <h2 id="sources-title">目前还需要核实</h2>
+              <p>下面是待查项目，不把未经核实的说法写成确定事实。</p>
+              <div class="research">
+                <div class="research-item"><span class="status">待核实</span><p>《成皿宝》的正式发布信息及可追溯的原始音源页面。</p></div>
+                <div class="research-item"><span class="status">待核实</span><p>相关回应作品、公开发言的准确顺序与原始出处。</p></div>
+                <div class="research-item"><span class="status">待整理</span><p>不同参与者的观点，以及听众解读与当事人表达之间的区别。</p></div>
+              </div>
+            </section>
+
+            <section aria-labelledby="method-title">
+              <span class="section-index">04 / METHOD</span>
+              <h2 id="method-title">先留下问题，不急着下结论</h2>
+              <div class="method"><p>先听作品，再核对时间线；区分歌词、当事人声明和二次传播的解释。资料不足的部分保留空白，等查到来源再更新。</p></div>
+            </section>
+
+            <section aria-labelledby="next-title">
+              <span class="section-index">05 / NEXT STEP</span>
+              <h2 id="next-title">下一次更新</h2>
+              <p>先选出一条具体的作品关系，找到原始发布页和可核对的时间，再决定它是否值得进入正式时间线。</p>
+              <p><a class="inline-link" href="../index.html#explorations">← 回到 BYB 的其他探索</a></p>
+            </section>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <footer>
+      <span class="mono muted">© 2026 BYB / FIELD NOTES 001</span>
+      <a class="mono inline-link" href="../index.html">BACK TO HOME ↗</a>
+    </footer>
+  </div>
+</body>
+</html>

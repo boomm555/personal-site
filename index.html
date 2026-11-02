@@ -5,12 +5,13 @@ Day 03
 Card hover: translateY(-6px)
 Duration: 220ms
 Reason: 希望反馈明显，但不打断阅读
+cd "D:\desktop\个人网站\10月个人\personal-site-day07"
 -->
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="BYB 的个人网站实验：信息安全学生，在网页、Hip-Hop、建筑与系统之间慢慢长出自己的页面。" />
+  <meta name="description" content="BYB 的个人网站实验：关于网页、Hip-Hop、审美、设计与世界运行机制的持续探索。" />
   <title>BYB — Work in Progress</title>
 
   <style>
@@ -460,6 +461,34 @@ Reason: 希望反馈明显，但不打断阅读
     .hero.is-entering .tiny {
       animation: riseIn 650ms ease-out 320ms both;
     }
+
+    /* Day 08 / 首页通往独立笔记的真实入口 */
+    .field-note-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-top: 20px;
+      padding: 6px 0;
+      color: var(--accent);
+      font: 12px "Courier New", monospace;
+      text-decoration: none;
+      border-bottom: 1px solid currentColor;
+      transition: gap 220ms ease, color 220ms ease;
+    }
+
+    .field-note-link:hover {
+      gap: 16px;
+      color: var(--ink);
+    }
+
+    .field-note-link:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .field-note-link { transition: none; }
+    }
   </style>
 </head>
 
@@ -506,7 +535,7 @@ Reason: 希望反馈明显，但不打断阅读
             </p>
 
             <p class="tiny">
-              WEB / HIP-HOP / ARCHITECTURE / SYSTEMS
+              WEB / HIP-HOP / DESIGN / SYSTEMS
               <br />
               THIS SITE WILL CHANGE AS I DO.
             </p>
@@ -533,15 +562,15 @@ Reason: 希望反馈明显，但不打断阅读
           </h2>
 
           <p>
-            这不是作品集成品，是我长期迭代的实验页。V0.1 先把首页说清楚：我是谁、我在做什么、我还在看什么。页面仍是单文件 HTML，没有框架，改一版看一版。
+            这不是完成的作品集，而是一个持续迭代的个人网站。从 V0.1 的首页开始，现在又长出了第一篇独立探索笔记。内容会随着新的发现和实践不断更新。
           </p>
           <p>
-            最近在练的是信息层级和手机端阅读，而不是堆功能。导航、封面、正在进行、探索、关于——先让别人不用猜。
+            最近在练信息层级、手机端阅读和多页面导航。比起堆功能，我更想让每一个入口都指向真实的内容。
           </p>
 
           <div class="topics" aria-label="当前项目标签">
-            <span>V0.1 HOME</span>
-            <span>SINGLE FILE</span>
+            <span>V0.2 / FIELD NOTES</span>
+            <span>MULTI PAGE</span>
             <span>NO FRAMEWORK</span>
             <span>KEEP ITERATING</span>
           </div>
@@ -559,7 +588,7 @@ Reason: 希望反馈明显，但不打断阅读
 
           <article class="interest-card">
             <span>01 / SOUND</span>
-            <h3> Hip-Hop</h3>
+            <h3>Hip-Hop</h3>
             <p>在听说唱怎么讲故事、怎么压节奏。也记下会反复循环的专辑，不装成乐评人。</p>
             <button
               id="music-toggle"
@@ -573,6 +602,9 @@ Reason: 希望反馈明显，但不打断阅读
               CURRENT LISTENING
               Tyler, The Creator — IGOR
             </p>
+            <a class="field-note-link" href="notes/hiphop.html">
+              阅读第一篇探索笔记 <span aria-hidden="true">↗</span>
+            </a>
           </article>
 
           <article class="interest-card">
@@ -584,7 +616,7 @@ Reason: 希望反馈明显，但不打断阅读
           <article class="interest-card">
             <span>03 / SYSTEMS</span>
             <h3>技术与机制</h3>
-            <p>课内是信息安全，课外会追系统怎么被设计、怎么失效。编程是动手方式，不是成绩单。</p>
+            <p>我喜欢追问一个系统为什么这样运转、又会在哪里失效。编程是动手探索的一种方式，不是成绩单。</p>
           </article>
 
         </div>
@@ -605,17 +637,17 @@ Reason: 希望反馈明显，但不打断阅读
           </h2>
 
           <p>
-            我是 BYB，也写 CAFF。兴趣并不整齐：网页设计、Hip-Hop、建筑、写代码，以及那些让人忍不住问“这到底是怎么运转的”的问题。
+            我是 BYB，也写 CAFF。兴趣并不整齐：网页设计、Hip-Hop、审美、写代码，以及那些让人忍不住问“这到底是怎么运转的”的问题。
           </p>
           <p>
             这里会慢慢出现练习、笔记和失败的尝试。没有包装好的实习履历，也先不放联系方式——页面比名片更诚实。
           </p>
 
           <div class="topics" aria-label="个人兴趣">
-            <span>INFOSEC</span>
+            <span>DESIGN</span>
             <span>WEB</span>
             <span>HIP-HOP</span>
-            <span>ARCHITECTURE</span>
+            <span>SYSTEMS</span>
             <span>CURIOSITY</span>
           </div>
         </div>
@@ -626,7 +658,7 @@ Reason: 希望反馈明显，但不打断阅读
 
     <!-- 页脚 -->
     <footer>
-      <span>© 2026 BYB — VERSION 0.1</span>
+      <span>© 2026 BYB — VERSION 0.2</span>
       <span>MADE TO EVOLVE ↗</span>
     </footer>
 
