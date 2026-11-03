@@ -1,0 +1,27 @@
+
+:root {
+  --paper: #e9ebdbf1;
+  --ink: #1a1b19;
+  --muted: #77776f;
+  --accent: #b54d31;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+}

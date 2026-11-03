@@ -9,40 +9,15 @@ cd "D:\desktop\个人网站\10月个人\personal-site-day07"
 -->
 <html lang="zh-CN">
 <head>
+ 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="BYB 的个人网站实验：关于网页、Hip-Hop、审美、设计与世界运行机制的持续探索。" />
-  <title>BYB — Work in Progress</title>
+   <title>BYB — Work in Progress</title>
+   <link rel="stylesheet" href="css/base.css">
 
   <style>
-    /* ========== 01 / 全局颜色变量 ========== */
-    :root {
-      --paper: #e9ebdbf1;
-      --ink: #1a1b19;
-      --muted: #77776f;
-      --accent: #b54d31;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      background: var(--paper);
-      color: var(--ink);
-      font-family: Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a {
-      color: inherit;
-    }
-
+   
     /* 修复：使用 calc() 计算宽度 */
     .frame {
       width: min(calc(100% - 64px), 1240px);
@@ -681,6 +656,7 @@ cd "D:\desktop\个人网站\10月个人\personal-site-day07"
       "aria-expanded",
       String(wasHidden)
   );
+  updateProgress();
   });
   </script>
 <script>
