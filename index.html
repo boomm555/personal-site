@@ -272,9 +272,20 @@ cd "D:\desktop\个人网站\10月个人\personal-site"
       line-height: 1.6;
     }
 
+    .interest-card--hiphop > span {
+      font-family: "Courier New", monospace;
+      letter-spacing: .08em;
+    }
+
+    .interest-card--hiphop h3 {
+      margin-block: .65em .35em;
+      line-height: 1.12;
+    }
+
     #music-toggle {
-      margin-top: 18px;
-      padding: 10px 14px;
+      display: block;
+      margin-top: 12px;
+      padding: 6px 10px;
       background: transparent;
       color: var(--ink);
       border: 1px solid var(--ink);
@@ -442,10 +453,10 @@ cd "D:\desktop\个人网站\10月个人\personal-site"
       display: inline-flex;
       align-items: center;
       gap: 9px;
-      margin-top: 20px;
+      margin-top: 4px;
       padding: 6px 0;
       color: var(--accent);
-      font: 12px "Courier New", monospace;
+      font: 700 12px "Courier New", monospace;
       text-decoration: none;
       border-bottom: 1px solid currentColor;
       transition: gap 220ms ease, color 220ms ease;
@@ -561,25 +572,25 @@ cd "D:\desktop\个人网站\10月个人\personal-site"
 
         <div class="interest-grid">
 
-          <article class="interest-card">
-            <span>01 / SOUND</span>
-            <h3>Hip-Hop</h3>
-            <p>在听说唱怎么讲故事、怎么压节奏。也记下会反复循环的专辑，不装成乐评人。</p>
+          <article class="interest-card interest-card--hiphop">
+            <span>01 / FIELD NOTES</span>
+            <h3>HIP-HOP: Beyond the Music</h3>
+            <p>从盛宇《成皿宝于》出发，追问中文说唱里的 diss、回应与语境。</p>
+            <a class="field-note-link" href="notes/hiphop.html">
+              阅读笔记 001 · 从一首 Diss 开始 <span aria-hidden="true">↗</span>
+            </a>
             <button
               id="music-toggle"
               type="button"
               aria-expanded="false"
               aria-controls="music-note"
             >
-              SHOW NOTE +
+              CURRENT LISTENING +
             </button>
             <p id="music-note" hidden>
               CURRENT LISTENING
               Tyler, The Creator — IGOR
             </p>
-            <a class="field-note-link" href="notes/hiphop.html">
-              阅读第一篇探索笔记 <span aria-hidden="true">↗</span>
-            </a>
           </article>
 
           <article class="interest-card">
@@ -650,8 +661,8 @@ cd "D:\desktop\个人网站\10月个人\personal-site"
     note.hidden = !wasHidden;
     //同步按钮的文字和可访问状态
     button.textContent = wasHidden
-    ?"HIDE NOTE -"
-    :"SHOW NOTE +";
+    ?"HIDE LISTENING -"
+    :"CURRENT LISTENING +";
     button.setAttribute(
       "aria-expanded",
       String(wasHidden)
