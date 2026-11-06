@@ -15,6 +15,8 @@ cd "D:\desktop\个人网站\10月个人\personal-site"
   <meta name="description" content="BYB 的个人网站实验：关于网页、Hip-Hop、审美、设计与世界运行机制的持续探索。" />
    <title>BYB — Work in Progress</title>
    <link rel="stylesheet" href="css/base.css">
+   <link rel="stylesheet" href="css/gallery.css">
+   <script src="js/gallery.js" defer></script>
 
   <style>
    
@@ -492,6 +494,7 @@ cd "D:\desktop\个人网站\10月个人\personal-site"
 
       <nav aria-label="主要导航">
         <a href="#building">NOW</a>
+        <a href="#gallery">GALLERY</a>
         <a href="#explorations">NOTES</a>
         <a href="#about">ABOUT</a>
       </nav>
@@ -562,6 +565,55 @@ cd "D:\desktop\个人网站\10月个人\personal-site"
           </div>
         </div>
 
+      </section>
+
+      <!-- Visual Gallery -->
+      <section id="gallery" class="visual-gallery" aria-labelledby="gallery-title">
+        <div class="gallery-intro">
+          <div>
+            <p class="gallery-kicker">VISUAL ARCHIVE / 001</p>
+            <h2 id="gallery-title">内心的地形</h2>
+          </div>
+          <div>
+            <p class="gallery-description">脑子里七上八下的</p>
+            <a class="gallery-skip" href="#explorations">跳到兴趣探索 ↓</a>
+          </div>
+        </div>
+        <div class="gallery-scene">
+          <div class="gallery-stage">
+            <div class="gallery-canvas">
+              <div class="gallery-window">
+                <div class="gallery-track">
+                  <!-- 移动整段 figure 可调整顺序。换图时一起更新路径、原图尺寸、alt 和图注。 -->
+                  <figure class="gallery-piece">
+                    <div class="gallery-image">
+                      <picture>
+                        <source type="image/webp" srcset="assets/gallery/life1-web.webp">
+                        <img src="assets/gallery/life1.png" width="4096" height="3072" loading="lazy" decoding="async" alt="两人穿着救生衣，一人坐在粉红桨板上，另一人浮在海水中。">
+                      </picture>
+                    </div>
+                    <figcaption><span class="gallery-index">01 / 生活与现实</span><span class="gallery-caption">海面上的一刻</span></figcaption>
+                  </figure>
+                  <figure class="gallery-piece gallery-piece--portrait">
+                    <div class="gallery-image">
+                      <picture>
+                        <source type="image/webp" srcset="assets/gallery/attitude1-web.webp">
+                        <img src="assets/gallery/attitude1.png" width="1086" height="1448" loading="lazy" decoding="async" alt="戴白色耳机的像素人像，周围画着红色皇冠、星星和心形涂鸦。">
+                      </picture>
+                    </div>
+                    <figcaption><span class="gallery-index">02 / 街头视觉</span><span class="gallery-caption">街头像素</span></figcaption>
+                  </figure>
+                  <figure class="gallery-piece gallery-piece--panorama">
+                    <div class="gallery-image">
+                      <img src="assets/gallery/imagination1.png" width="1206" height="553" loading="lazy" decoding="async" alt="蓝紫色的幻想插画，张口的长耳生物与发光眼睛的身影交错。">
+                    </div>
+                    <figcaption><span class="gallery-index">03 / 想象世界</span><span class="gallery-caption">蓝紫异境</span></figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- Explorations -->
